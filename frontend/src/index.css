@@ -1,0 +1,115 @@
+/* --- 1. FONT IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- 2. NEW "COSMIC LAVENDER" COLOR PALETTE --- */
+:root {
+  --bg-dark: #1e1b34;      /* Deep cosmic indigo */
+  --bg-medium: #302b54;   /* Lighter purple for cards */
+  --bg-light: #484273;    /* For interactive elements */
+  --border-color: #615a96;
+  --text-primary: #EDE9FE;
+  --text-secondary: #a7a1d1;
+
+  --accent-primary: #D8B4FE; /* Light Lavender */
+  --accent-primary-glow: rgba(216, 180, 254, 0.3);
+  --accent-secondary: #6EE7B7; /* Bright Mint for success */
+  --error-color: #FCA5A5;    /* Soft Pink-Red */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 3. NEW ANIMATED GRADIENT BACKGROUND --- */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  /* The magic starts here: a large gradient that we animate */
+  background: linear-gradient(135deg, #231a3b, #4a2c5a, #7a4b7b, #4a2c5a);
+  background-size: 400% 400%;
+  animation: cosmic-flow 15s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes cosmic-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Enhanced UI Elements (unchanged but will look new with the colors) --- */
+input, button {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: var(--bg-medium);
+  color: var(--text-primary);
+  transition: all 0.2s ease-in-out;
+}
+input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px var(--accent-primary-glow);
+}
+button {
+  cursor: pointer;
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #1e1b34;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+  background-color: #e9d5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--accent-primary-glow);
+}
+button:disabled {
+  background-color: var(--bg-light);
+  cursor: not-allowed;
+  transform: translateY(0);
+  box-shadow: none;
+}
+.gradient-text {
+  background-image: linear-gradient(90deg, #D8B4FE, #FBCFE8, #D8B4FE);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 4s linear infinite;
+}
+
+@keyframes gradient-flow {
+  to { background-position: 200% center; }
+}
+
+/* --- 4. ENHANCED "BLING" SPARKLE EFFECT --- */
+.sparkle {
+    position: fixed;
+    /* Bigger size for more impact */
+    width: 15px; 
+    height: 15px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fade-out 0.8s forwards;
+    /* A more intense, layered glow */
+    box-shadow: 
+        0 0 8px var(--accent-primary), 
+        0 0 12px #fff,
+        0 0 20px #e9d5ff;
+}
+
+@keyframes fade-out {
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
