@@ -35,6 +35,9 @@ LexiLearn AI leverages a modern, robust technology stack chosen for performance,
 -   **Data Structures:** Python’s built-in `heapq` for Priority Queue
 -   **Architecture:** MVC-like pattern — Routers, Services, Models, Schemas for clear separation of concerns
 
+   <img width="3165" height="632" alt="Untitled diagram-2025-10-24-101751" src="https://github.com/user-attachments/assets/385c2022-c17d-4da1-a9cb-59d2da8412ca" />
+
+
 ### Frontend (React / Vite)
 
 -   **Language:** JavaScript (ES6+)
